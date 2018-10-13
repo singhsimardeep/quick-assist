@@ -1,0 +1,35 @@
+<div class="col-md-6 col-md-offset-3" ng-init="view()">
+    <ul >
+        <h1>Classifieds</h1>
+        <li  ng-repeat="class in classified">
+            <article >
+                <section >
+                    <div   style="cursor: pointer;">
+                        <img ng-src="{{class.Image}}" width="350" height="250" align="left"/></div>
+                </section>
+
+                <h5><b>Title</b></h5>
+                    <p>{{class.Title}}</a></p>
+
+
+                <section >
+                    <h5><b>Street</b></h5>
+                    {{class.Street}}<br>
+                    <h5><b>Postal Code</b></h5>
+                    {{class.PostCode}}<br>
+                    <h5><b>Phone No.</b></h5>
+                    {{class.Phone_No}}
+                    <h5><b>Price</b></h5>
+                    {{class.Price}}</section>
+
+                <h5><b>Description</b></h5>
+                <p>{{class.Description}}</p>
+
+                <p >
+                    <span></span>
+                </p>
+
+            </article>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Update User Profile</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">First Name
+                        </label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="First Name " name="First Name" type="text"
+                                       placeholder="First Name" class="form-control input-md" ng-model="user.firstname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Last Name
+                        </label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Last Name" name="Last Name" type="text"
+                                       placeholder="Last Name" class="form-control input-md" ng-model="user.lastname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Date Of Birth">Date Of Birth</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Date Of Birth" ng-model="user.dateofbirth" name="Date Of Birth" type="text" placeholder="Date Of Birth"
+                                       class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Email">Email</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Email" ng-model="user.email" name="Email" type="text" placeholder="Email"
+                                       class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Country">Gender</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Gender" ng-model="user.gender" name="Gender" type="text" placeholder="Gender"
+                                       class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Country">Country</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Country" ng-model="user.country" name="Country" type="text" placeholder="Country"
+                                       class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Pin Code">Pin Code</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input id="Pin Code" ng-model="user.pincode" name="Date Of Birth" type="text" placeholder="Pin Code"
+                                       class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"></label>
+                                <div class="col-md-4">
+                                    <a href="#" class="btn btn-success" ng-click="updateUser()"><span
+                                            class="glyphicon glyphicon-thumbs-up"></span> Submit</a>
+                                    <a class="btn btn-danger" value="" ng-click="user=''"><span
+                                            class="glyphicon glyphicon-remove-sign"></span> Clear</a>
+                                </div>
+                            </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

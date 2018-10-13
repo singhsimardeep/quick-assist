@@ -1,0 +1,26 @@
+
+<div class="container-fluid">
+ <div class="Container">	
+	<form ng-submit="add()">
+    <h1><b>Add New Travel Insight</b> </h1>
+	<div class="form-group"><br><br>
+    <div class="col-xs-8">
+    <label for="ex1">Country</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="form-control" id="con" type="text" ng-model="travel.con" required><br>
+        <label for="ex2">City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="form-control" id="cty" name="text" type="text" ng-model="travel.cty" required><br>
+        <label for="ex3">Travel Date</label>&nbsp;&nbsp;
+        <input class="form-control" id="tra" name="date" type="date" ng-model="travel.tra" required>
+         <!--<label for="ex3">Return Date</label>&nbsp;&nbsp;
+            <input class="form-control" id="ret" name="date" type="date" ng-model="travel.ret" required>
+-->
+      <br><br>
+  <div class="buttonHolder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+    </div>
+    </div>
+  </form>  
+ </div>
+</div>

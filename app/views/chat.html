@@ -1,0 +1,31 @@
+<div>
+    <h2>Private Chat Messages</h2>
+    <div ng-repeat="user in connectedUsers">
+      <h3>User: {{user.username}}</h3>
+      <input id="messgebox" ng-model="chatmessage" placeholder="Enter Message" value="Reset"></input>
+        <button ng-click="sendmessage(user.username,chatmessage)" onclick="clearInput()">Send</button>
+    </div>
+   <!-- <input ng-model="recmessage">Message Received</input>-->
+</div>
+
+<div>
+    <h2>Public Chat Messages</h2>
+        <input id="messgebox1" ng-model="publicmessage" placeholder="Enter Message"></input>
+        <button ng-click="sendpublicmessage(publicmessage)" onclick="clearInput()">Send</button>
+    </div>
+    <!-- <input ng-model="recmessage">Message Received</input>-->
+</div>
+<div>
+    <h2>Messages Received</h2>
+    <div ng-repeat="msg in recmessage">
+        <p>{{msg[1]}}: {{msg[0]}}</p>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function clearInput(){
+        document.getElementById("messgebox").value="";
+        document.getElementById("messgebox1").value=""
+    }
+</script>

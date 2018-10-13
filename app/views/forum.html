@@ -1,0 +1,143 @@
+<!--Discussion forum to discuss all the issues regarding travelling like hotels, rooms, places to visit etc. In this forum you can add your new discussion post which will show to all the users and the users can see it and also give you the suggestions regarding it. It has the functions of create post, edit post, delete post, update post and also comments sections-->
+<head>
+    <style>
+        /* For totop class*/
+        .totop {
+            position: fixed;
+            bottom: 2em;
+            padding: 1em;
+            display: none;
+            text-decoration: none;
+            right: 2em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-size: 12px;
+        }
+
+        /* For mid class */
+        .mid {
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        /*Background color for hover for totop class*/
+        .totop:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Box contents */
+        .myboxinside {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 999999;
+            background-color: #fefeff;
+            width: 25%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 21px;
+
+        }
+
+        /* For myboxouter */
+        .myboxouter {
+            padding: 0px 11px;
+            color: white;
+            background-color: #5cb85f;
+        }
+
+        .myboxin {padding: 0px 8px;}
+
+    </style>
+</head>
+
+<!-- For box -->
+<div id="mybox" class="modal forumModel">
+
+    <!-- Box contents -->
+    <div class="myboxinside">
+        <div class="myboxouter">
+            <span class="close">&times;</span>
+            <h5>New Comment Published</h5>
+        </div>
+        <div class="myboxin">
+            <h7 ng-repeat="value in users">New comment <b>"{{value.message.comment}}"</b> </br> posted on {{value.date}}.</br>Click the link to view the comment
+                <a ui-sref="chat">View Comment</a></h7>
+        </div>
+    </div>
+</div>
+<div class="col-md-9 col-md-offset-1">
+    <div class="panel panel-success">
+        <div class="container-fluid">
+            <h1 align="center"><strong><c>Discussion Forum</c></strong></h1>
+            <form name="forumform">
+                <div class="form-group">
+                    <h3>Post New discussions</h3>
+                    <input class="form-control" class="col-sm-5" ng-model="post.title" placeholder="Please Enter new discussion" required />
+                    <textarea class="form-control" class="col-sm-5" ng-model="post.body" placeholder="Description" required></textarea>
+                    <button ng-click="createPost(post)"  type="button" id="postclick" class="btn btn-primary btn-default btn-block" ng-disabled="!forumform.$valid">Create Post</button>
+                     <button ng-click="updatePost(post)"  type="button" class="btn btn-success btn-default btn-block" ng-disabled="!forumform.$valid">Update Post</button>
+                </div>
+            </form>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="panel panel-warning">
+                            <!-- For posts -->
+                            <div ng-repeat="post in posts">
+                                <div class="jumbotron well">
+                                    <div class="col-md-12">
+                                        <div class="panel-heading">
+                                            <p class="panel-title">
+                                                <div class="thumbnail">
+                                                    <div class="caption">
+                                                        <a data-toggle="collapse" onclick="$(this).parents().next('div.panel-collapse.collapse').collapse('toggle');">
+                                                            <h3><b>{{post.title}}</b></h3></br><div><p>{{post.body}}<div>posted by:{{post.username}}</div></p>{{post.posted}}</div></br><button class="btn btn-primary" ng-click = "getComments(post)"> View Replies</button>
+                                                            <a ng-click="editPost(post._id)" class="pull-right"><span class="glyphicon glyphicon-pencil" ></span></a>
+                                                            <a ng-click="deletePost(post._id)" class="pull-right"><span class="glyphicon glyphicon-remove" ></span></a>
+                                                    </div>
+                                                 </div>
+                                            </p>
+                                        </div>
+                                <div class="panel-collapse collapse">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <div ng-repeat="record in records">
+                                            <div class="alert alert-success"><h4>{{record[0]}}</br></br></h4>
+                                                Posted on:{{record[1]}}</br>Posted by:{{record[2]}}
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <p class="list-group-item-text">
+                                        </p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  For Comment form  -->
+                        <div id="Comment-panel" >
+                            <form name="commentform">
+                                <div ><textarea id="commenttext" class="form-control" required ng-model="post.comment" placeholder="Post a Reply"></textarea></div>
+                                <div > <button ng-click=" commentPost(post)"   ng-disabled="!commentform.$valid" class="btn btn-Info" >Comment</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+         </div>
+         <hr />
+        <footer>
+        <div class="mid">That's all folks for now!! Go ahead and post !!</div>
+        <a href="#" class="totop">Move to Top</a>
+        </footer>
+    </div>
+    </div>
+</div>

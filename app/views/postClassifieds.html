@@ -1,0 +1,73 @@
+<!--<div class="container-fluid">-->
+    <div class="container ">
+
+<form name="myForm">
+    <h1><b>Post Classified</b> </h1>
+    <div class="form-group"><br><br>
+        <div class="col-xs-8" style="margin:0 auto">
+
+    <label for="ex1">Classified Title</label>
+    <input class="form-control" type="text" name="title" ng-model="title" value="" required>
+
+
+
+    <label for="ex2">Classifieds type</label>
+    <select class="form-control" class="form-control" ng-model="type" name="type" required>
+        <option value="" disabled selected>Select your option</option>
+        <option value="Rent a Room">Rent a Room</option>
+        <option value="Rent a Car">Rent a Car</option>
+        <option value="Rent a Cycle">Rent a Cycle</option>
+    </select>
+
+
+
+    <label for="ex2">Description</label>
+   <textarea class="form-control" name="description" ng-model="description" value="" required></textarea>
+
+    <label for="ex3">Country</label>
+    <input class="form-control" type="text" name="country" ng-model="country" value="" required>
+
+    <label for="ex3">Street</label>
+    <input class="form-control" type="text" name="street" ng-model="street" value="" required>
+
+    <label for="ex3">PostCode</label>
+    <input class="form-control" type="text" name="post" ng-model="post" value="" required>
+
+        <label for="ex3">Phone No</label>
+        <input class="form-control" type="text" name="phone" ng-model="phone" value="" required>
+
+        <label for="ex3">email</label>
+        <input class="form-control" type="text" name="email" ng-model="email" value="" required>
+
+    <label for="ex3">Price</label>
+    <input class="form-control" type="text" name="price" ng-model="price" value="" required>
+
+    <label for="ex3">From</label>
+    <input class="form-control" type="date" id="from" name="from" ng-model="from" value="" required>
+
+    <label for="ex3">To</label>
+    <input class="form-control" type="date" id="to" name="to" ng-model="to"  ng-change="checkErr(from, to)" value="" required>
+
+    <span style="color:red;font-weight:bold">{{errMessage}}</span><br>
+    <label></label>
+
+    <label for="ex3">Image</label>
+            <input type="file" ngf-select ng-model="File" name="file" class="btn btn-success"
+                   accept="image/*" ngf-max-size="3MB" required
+                   ngf-model-invalid="errorFile">
+
+                <i style="color:red;font-weight:bold" ng-show="myForm.file.$error.required"></i><br>
+            <i style="color:red;font-weight:bold" ng-show="myForm.file.$error.maxSize">File is large
+                {{errorFile.size / 1000000|number:1}}</i>
+
+            <br>
+            <div class="buttonHolder">
+            <button ng-disabled="!myForm.$valid" ng-click="uploadPic(File)" class="btn btn-success">Submit</button>
+            </div>
+
+</div>
+        </div>
+</form>
+</div>
+<!--
+</div>-->

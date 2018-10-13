@@ -1,0 +1,111 @@
+<style>
+    .main
+    {
+        width:1200px;
+        height:400px;
+        margin-top: 50px;
+    }
+    .ab
+    {
+        width:650px;
+        height:400px;
+        float:left;
+        margin-right:20px;
+
+    }
+.cd{
+    margin-top:50px;
+    width:450px;
+    height:400px;
+    float:right;
+
+}
+
+     table
+     {
+         width: 700px;
+
+     }
+     th , td
+     {
+         border: 1px solid grey;
+         border-collapse: collapse;
+         padding: 5px;
+         width: 100px;
+     }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+
+</style>
+
+
+<div ng-init = "insight()" class="main">
+
+    <div class="container">
+
+        <div class="ab">
+            <canvas id="myChart" value="myChart"></canvas>
+        </div>
+
+        <!-- <div class = "ab">
+               <canvas id="myChart2" value="myChart2"></canvas>
+         </div>
+-->
+
+        <!--<div class="cd">
+
+            <h2>Travel Cities Detail</h2>
+
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Travel Date</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr class="info">
+                    <td>Germany</td>
+                    <td>Hamburg</td>
+                    <td>12.12.2017</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>-->
+
+
+    <div class="cd">
+
+        <table>
+            <th><B>Country</B></th>
+            <th><B>City</B></th>
+            <th><B>Date Of Travel</B></th>
+            <tr ng-repeat="x in travelledCity">
+
+                <td>{{ x.country }}</td>
+                <td>{{ x.city }}</td>
+                <td>{{ x.traveldate }}</td>
+
+            </tr>
+
+        </table>
+        <!--<ul class="pager">
+
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>-->
+    </div>
+
+    <!--<div id="table_div"></div>-->
+
+    </div>
+
+</div>

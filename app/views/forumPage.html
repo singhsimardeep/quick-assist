@@ -1,0 +1,12 @@
+<div class="container">
+
+    <h3>{{post.title}} </h3>
+    <h3>{{post.body}} </h3>
+    <div id="Comment-panel " class="Comment_panel">
+        <div ><textarea class="form-control" ng-model="post.comment" placeholder="comment"></textarea></div>
+
+        <div > <button ng-click=" commentPost(post)" class="btn btn-default" >Comment</button></div>
+
+
+    </div>
+</div>

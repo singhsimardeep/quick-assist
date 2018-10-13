@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+  <title>Welcome Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app/css/index_design.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC6rGj7wibJjTkvuhz9itWKFXeim0dXuc" async defer></script>
+
+	<script src="app/scripts/angular.min.js"></script>
+	<script src="app/scripts/angular-ui-router.min.js"></script>
+  <script src="app/scripts/socket.io.js"></script>
+	<script src="app/routes/route.js"></script>
+	<script src="app/modules/login/loginController.js"></script>
+  <script src="app/modules/login/forgotPassword.js"></script>
+
+    <script src="app/modules/main/mainController.js"></script>
+  <script src="app/modules/login/userController.js"></script>
+  <script src="app/modules/chat/chatController.js"></script>
+  <script src="app/modules/login/changePassword.js"></script>
+
+    <script src="app/modules/map/mapController.js"></script>
+    <script src="app/modules/Classifieds/classifiedController.js"></script>
+    <script src="app/scripts/ng-file-upload-master/upload.js"></script>
+    <script src="app/scripts/ng-file-upload-master/validate.js"></script>
+    <script src="app/scripts/ng-file-upload-master/data-url.js"></script>
+    <script src="app/scripts/ng-file-upload-master/drop.js"></script>
+    <script src="app/scripts/ng-file-upload-master/drop.js"></script>
+    <script src="app/scripts/ng-file-upload-master/exif.js"></script>
+    <script src="app/scripts/ng-file-upload-master/FileAPI.js"></script>
+    <script src="app/scripts/ng-file-upload-master/model.js"></script>
+    <script src="app/scripts/ng-file-upload-master/resize.js"></script>
+    <script src="app/scripts/ng-file-upload-master/select.js"></script>
+    <script src="app/scripts/ng-file-upload-master/shim-elem.js"></script>
+    <script src="app/scripts/ng-file-upload-master/shim-filereader.js"></script>
+    <script src="app/scripts/ng-file-upload-master/shim-upload.js"></script>
+    <script src="app/modules/travelinsight/travelinsightcontroller.js"></script>
+    <script src="app/modules/forums/forumController.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+  <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+
+
+  </head>
+
+<body background="./app/img/Carousel/image.jpg">
+
+<div ng-app="app">
+  <div ng-if="checkAuth==true">
+    <nav class="navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Quick Assist</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <!--<li class="active"><a href="#"><span class="glyphicon glyphicon glyphicon-home"></span></a></li>-->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">Classifieds
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="viewClassified" href="#">View</a></li>
+              <li><a ui-sref="postClassified" href="#">Post</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">Travel Insight
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="viewTravel" href="#">View</a></li>
+              <li><a ui-sref="addTravel" href="#">Add</a></li>
+            </ul>
+          </li>
+          <li><a ui-sref="forum" href="#">Forum</a></li>
+          <li><a ui-sref="chat" href="#">Chat</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="">{{userlogin}}
+                <span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" ui-sref="useprofile1">Edit Profile</a></li>
+                <li><a class="dropdown-item" ui-sref="changePassword">Change Password</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div ui-view></div>
+  <!--<script src="socket.io/socket.io.js"></script>-->
+
+<!--<script>
+      var socket = io();
+      socket.emit('displayNumber', {msg: "simar"});
+  </script>-->
+</div>
+</body>
+</html>

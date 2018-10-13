@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="map" style="width:845px; height:645px">
+            </div>
+            <form id="login-form" role="form" name="loginForm" style="display: block;" ng-submit="mapusers()" novalidate>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <input class="btn btn-primary btn-large"  type="submit" name="map-submit" id="mapp-submit" tabindex="4" value="Show Nearby users">  <b>Select Radius: </b>
+                            <select id="radius">
+                                <option value=1>1 km</option>
+                                <option value=2>10 km</option>
+                                <option value=5>50 km</option>
+                                <option value=300>300 km</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="page-header">
+                <h1>
+                    Contact : <small>Nearby users</small>
+                </h1>
+            </div>
+            <ol>
+                <div ng-repeat="name in records"><li>    <div class="page-header"></div>
+                    <div>
+                        <div >
+                            <address>
+                                <h4><strong>Name: {{name.firstname}}</strong></h4>
+                                <h9> Email:{{name.email}}</h9><br>
+                                <p>Gender: {{name.gender}} <i class="fa fa-male"></i></p> <br></p>
+                                <p><a ui-sref="chat">View details »</a></p>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
